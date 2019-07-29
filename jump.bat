@@ -5,10 +5,10 @@ if not exist "jumplist.txt" goto newjumplist
 :readfromjumplist
 for /f "eol=# delims=" %%i in (jumplist.txt) do (
 	set p[!len!][!item!]=%%i
-	set /a item=!item!+1
+	set /a item+=1
 	if !item! equ 3 (
 		set /a item=0
-		set /a len=!len!+1
+		set /a len+=1
 	)
 )
 set /a len=%len%-1
@@ -39,11 +39,13 @@ for /l %%i in (0,1,%len%) do (
 		echo.
 		cd /d !p[%%i][1]!
 		echo Files in !cd!:
-		echo --------------------------------
+		echo ----------------------------------------------------------------
 		dir /a /b
 		echo.
+		title !p[%%i][0]!: !p[%%i][2]! (!p[%%i][1]!^)	
 		cmd /k
 		echo Back to the former directory. (%cd%^)
+		title %cd%
 		goto :eof
 	)
 )
@@ -156,7 +158,7 @@ goto :eof
 
 :documentation_jumplist
 echo The standard format:
-echo --------------------------------
+echo ----------------------------------------------------------------
 echo # MyFirstProject
 echo # "C:\myname\somefolder\"
 echo # Hello world
@@ -168,7 +170,7 @@ for /l %%i in (1,1,2) do (
 	echo.
 	)
 echo ...
-echo --------------------------------
+echo ----------------------------------------------------------------
 echo. 
 echo "name_i" is the name of a project with no spaces. Not case sensitive.
 echo "directory_i" is its directory.
