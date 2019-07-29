@@ -64,7 +64,7 @@ echo Usage:	RUNCPP [file.cpp ^| /?]
 echo.
 echo     No args    Display help. This is the same as typing /?.
 echo     -?         Display help. This is the same as not typing any options.
-echo     xxx.cpp    This C++ program files will be compiled and run.
+echo     xxx.cpp    This C++ program file will be compiled (by g++) and run.
 echo                Do not forget typing ".cpp"
 echo.
 echo This batch program (runcpp.bat) is recommended as the default program for the C++ program files.
