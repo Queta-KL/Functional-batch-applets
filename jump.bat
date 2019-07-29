@@ -22,6 +22,12 @@ for %%i in ("","/help","-help","--help") do if /i "%1"==%%i goto documentation
 if /i "%1"=="/?" goto documentation
 if /i "%1"=="-?" goto documentation
 if /i "%1"=="--?" goto documentation
+::help jumplist
+for %%i in ("/jumplist","-jumplist","--jumplist") do if /i "%1"==%%i (
+	echo Project list are stored in the text file of "jumplist.txt".
+	echo. 
+	goto documentation_jumplist
+)
 ::add
 for %%i in ("/add","-add","--add") do if /i "%1"==%%i goto func_add
 ::del
@@ -132,7 +138,7 @@ if not "%2"=="" (
 )
 echo Goes to a project directory quickly.
 echo.
-echo JUMP [project_name ^| /?] [/? ADD/DEL/JUMPLIST] [/ADD name drct note] [/DEL name]
+echo JUMP [project_name] [/? JUMPLIST^|ADD^|DEL] [/JUMPLIST] [/ADD name drct note] [/DEL name]
 echo.
 echo Project list are stored in the text file of "jumplist.txt".
 if %len% equ -1 (
@@ -156,9 +162,9 @@ echo # "C:\myname\somefolder\"
 echo # Hello world
 echo.
 for /l %%i in (1,1,2) do (
-	echo "name_%%i]"
-	echo "directory_%%i]"
-	echo "note_%%i]"
+	echo "name_%%i"
+	echo "directory_%%i"
+	echo "note_%%i"
 	echo.
 	)
 echo ...
