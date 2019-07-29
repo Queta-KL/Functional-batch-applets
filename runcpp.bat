@@ -69,7 +69,7 @@ goto :eof
 :documentation
 echo Compiles and runs C/C++ program files.
 echo.
-echo Usage:	RUNCPP [file.cpp ^| file.c ^| /?] [Command-line arguments for the C/C++ program]
+echo Usage:	RUNCPP [file.cpp ^| file.c ^| /?] [command-line arguments for the C/C++ program]
 echo.
 echo     No args    Display help. This is the same as typing /?.
 echo     -?         Display help. This is the same as not typing any options.
