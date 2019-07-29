@@ -10,5 +10,4 @@ It is designed to change the directory quickly to that of your project.
 To be freed from typing many "cd"'s and searching the directory.
 ```bat
 jump EE102
-echo 12
 ```
