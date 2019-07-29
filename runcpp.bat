@@ -5,7 +5,14 @@ if /i "%1"=="-?" goto documentation
 if /i "%1"=="--?" goto documentation
 title %~1
 set time0=%time%
-g++ -o %~n1 %~nx1
+if "%~x1"==".cpp" (
+	g++ -o %~n1 %~nx1
+) else if "%~x1"==".c" (
+	gcc -o %~n1 %~nx1
+) else (
+	echo Error! The extension (%~x1^) is not supported (only ".c" or ".cpp" expected^).  Try "jump /?".
+	goto :eof
+)
 set time1=%time%
 if "%time0:~0,1%"=="0" (set /a h=%time0:~1,1%) else set /a h=%time0:~0,2%
 if "%time0:~3,1%"=="0" (set /a m=%time0:~4,1%) else set /a m=%time0:~3,2%
@@ -30,10 +37,11 @@ if not %errorlevel% equ 0 (
 	pause
 	goto :eof
 )
+for /f "tokens=1,*" %%i in ("%*") do set cla=%%j
 echo Stdin and stdout:
 echo ----------------------------------------------------------------
 set time2=%time%
-%~n1
+%~n1 %cla%
 set time3=%time%
 echo ----------------------------------------------------------------
 if "%time2:~0,1%"=="0" (set /a h=%time2:~1,1%) else set /a h=%time2:~0,2%
@@ -52,19 +60,22 @@ set /a tr_cs1=t %% 10
 set /a tr_cs0=t/10 %% 10
 set /a tr_s=t/100
 echo Compiling time: %tc_s%.%tc_cs0%%tc_cs1%s
+if "%cla%"=="" (echo CMDL arguments. N/A) else echo CMDL arguments: %cla%
 echo Running time:   %tr_s%.%tr_cs0%%tr_cs1%s
 echo Return value:   %errorlevel%
 pause
 goto :eof
 
 :documentation
-echo Compiles and runs C++ program files.
+echo Compiles and runs C/C++ program files.
 echo.
-echo Usage:	RUNCPP [file.cpp ^| /?]
+echo Usage:	RUNCPP [file.cpp ^| file.c ^| /?] [Command-line arguments for the C/C++ program]
 echo.
 echo     No args    Display help. This is the same as typing /?.
 echo     -?         Display help. This is the same as not typing any options.
 echo     xxx.cpp    This C++ program file will be compiled (by g++) and run.
-echo                Do not forget typing ".cpp"
+echo     xxx.c      This C program file will be compiled (by gcc) and run.
 echo.
-echo This batch program (runcpp.bat) is recommended as the default program for the C++ program files.
+echo Command-line arguments for the C/C++ program are accepted, by following the file name.
+echo.
+echo This batch program (runcpp.bat^) is recommended as the default program for the C/C++ program files.
