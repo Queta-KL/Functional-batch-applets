@@ -5,7 +5,7 @@ It can be used as the default program for C/C++ programs.
 Then when you double click your C/C++ program, it will be compiled (by gcc or g++ correspondingly) and run.
 No need to type on the command line.
 Command-line arguments for the C/C++ program are still acceptable. 
-'''cmd
+'''
 >>runcpp
 Compiles and runs C/C++ program files.
 
