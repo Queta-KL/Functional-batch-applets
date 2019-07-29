@@ -76,6 +76,6 @@ echo     -?         Display help. This is the same as not typing any options.
 echo     xxx.cpp    This C++ program file will be compiled (by g++) and run.
 echo     xxx.c      This C program file will be compiled (by gcc) and run.
 echo.
-echo Command-line arguments for the C/C++ program are accepted, by following the file name.
+echo Command-line arguments for the C/C++ program are acceptable, by following the file name.
 echo.
 echo This batch program (runcpp.bat^) is recommended as the default program for the C/C++ program files.
