@@ -9,7 +9,7 @@ Command-line arguments for the C/C++ program are still acceptable.
 >>runcpp /?
 Compiles and runs C/C++ program files.
 
-Usage:  RUNCPP [file.cpp | file.c | /?] [Command-line arguments for the C/C++ program]
+Usage:  RUNCPP [file.cpp | file.c | /?] [command-line arguments for the C/C++ program]
 
     No args    Display help. This is the same as typing /?.
     -?         Display help. This is the same as not typing any options.
