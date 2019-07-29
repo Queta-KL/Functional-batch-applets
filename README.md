@@ -8,7 +8,7 @@ No need to type on the command line.
 It can be put in the default directory of the command line.
 It is designed to change the directory quickly to that of your project.
 To be freed from typing many "cd"'s and searching the directory.
-```Bat
+```bat
 jump EE102
 echo 12
 ```
