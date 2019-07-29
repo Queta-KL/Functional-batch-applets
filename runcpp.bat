@@ -1,4 +1,8 @@
 @echo off
+for %%i in ("","/help","-help","--help") do if /i "%1"==%%i goto documentation
+if /i "%1"=="/?" goto documentation
+if /i "%1"=="-?" goto documentation
+if /i "%1"=="--?" goto documentation
 title %~1
 set time0=%time%
 g++ -o %~n1 %~nx1
@@ -19,10 +23,10 @@ set /a tc_cs1=t %% 10
 set /a tc_cs0=t/10 %% 10
 set /a tc_s=t/100
 if not %errorlevel% equ 0 (
+	echo.
 	echo Compilation Error! Failed to compile file %~nx1.
 	echo Compiling time: %tc_s%.%tc_cs0%%tc_cs1%s
 	echo Error level:    %errorlevel%
-	echo Current time:   %time%
 	pause
 	goto :eof
 )
@@ -50,5 +54,17 @@ set /a tr_s=t/100
 echo Compiling time: %tc_s%.%tc_cs0%%tc_cs1%s
 echo Running time:   %tr_s%.%tr_cs0%%tr_cs1%s
 echo Return value:   %errorlevel%
-echo Current time:   %time%
 pause
+goto :eof
+
+:documentation
+echo Compiles and runs C++ program files.
+echo.
+echo Usage:	RUNCPP [file.cpp ^| /?]
+echo.
+echo     No args    Display help. This is the same as typing /?.
+echo     -?         Display help. This is the same as not typing any options.
+echo     xxx.cpp    This C++ program files will be compiled and run.
+echo                Do not forget typing ".cpp"
+echo.
+echo This batch program (runcpp.bat) is recommended as the default program for the C++ program files.
