@@ -8,7 +8,7 @@ It can be used as the default program for C/C++ source code files.
 Then when you double click your C/C++ source code file, it will be compiled (by gcc or g++ correspondingly) and run.
 No need to type on the command line.
 Command-line arguments for the C/C++ programs are still acceptable. 
-```
+```cmd
 >>runc /?
 Compiles and runs C/C++ source code files.
 
@@ -24,7 +24,7 @@ Command-line arguments for the C/C++ program are acceptable, by following the fi
 This batch program (runc.bat) is recommended to be set as the default program for C/C++ source code files.
 ```
 Here is an example:
-```
+```cmd
 >> runc displayCLA.cpp a b c 1 2 3
 Stdin and stdout:
 ----------------------------------------------------------------
@@ -41,7 +41,7 @@ CMDL arguments: a b c 1 2 3
 Running time:   3.00s
 Return value:   12345
 Press any key to continue . . .
-```
+```cmd
 The source code of displayCLA.cpp:
 ```cpp
 #include<cstdio>
@@ -68,6 +68,30 @@ You will be freed from typing many "cd"'s and searching the directory.
 The list recording the directories of each project is stored in "jumplist.txt" under the same directory of "jump.bat"
 
 For example:
-```bat
-jump EE102
+```cmd
+C:\Users\yourname>jump EE102
+NAME: leetcode  NOTE: Course project of EE102
+
+Files in C:\Studying\Major\EE102\homework\project:
+----------------------------------------------------------------
+config.json
+control.txt
+eval.py
+lib
+LICENSE
+log.txt
+main.py
+results
+testset
+train.py
+trainset
+utils.py
+
+C:\Studying\Major\EE102\homework\project>echo OK
+OK
+
+C:\Studying\Major\EE102\homework\project>exit
+Back to the former directory. (C:\Users\yourname)
+
+C:\Users\Queta>
 ```
