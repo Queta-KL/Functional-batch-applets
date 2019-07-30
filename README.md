@@ -189,7 +189,7 @@ Project list:
     [Summer]    Note: Facial recognition this summer
     Directory: "C:\ML\Research\AIlab\face\"
 
->>jump -add leetcode "C:\coding\OJ\leetcode" OJ
+>>jump /add leetcode "C:\coding\OJ\leetcode" OJ
 Successfully adds a new project named leetcode:
 
     [leetcode]  Note: OJ
