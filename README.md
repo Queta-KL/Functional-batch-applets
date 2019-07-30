@@ -71,9 +71,9 @@ It is designed to change the directory quickly to that of your project.
 You will be freed from typing many "cd"'s and searching the directory.
 The list recording the directories of each project is stored in "jumplist.txt" under the same directory of "jump.bat"
 ### Usage example
-For example:
+In this example, entering and exiting a project are both convenient, only one command needed.
 ```cmd
-C:\Users\yourname>jump EE102
+C:\Users\ABCD>jump EE102
 NAME: EE102  NOTE: Course project of EE102
 
 Files in C:\Studying\Major\EE102\homework\project:
@@ -95,13 +95,31 @@ C:\Studying\Major\EE102\homework\project>echo OK
 OK
 
 C:\Studying\Major\EE102\homework\project>exit
-Back to the former directory. (C:\Users\yourname)
+Back to the former directory. (C:\Users\ABCD)
 
-C:\Users\Queta>
+C:\Users\ABCD>
 ```
 ### Help
+If you have three projects "EE102", "Summer" and "Intern", the project list will be displayed as below. By command "jump xxx", the directory will be changed to that of the project. The list of project name, directory and note is stored in "jumplist.txt".
+```cmd
+>> jump /?
+Goes to a project directory quickly.
+
+JUMP [project_name] [/? JUMPLIST|ADD|DEL] [/JUMPLIST] [/ADD name drct note] [/DEL name]
+
+Project list are stored in the text file of "jumplist.txt".
+Project list:
+    [EE102]     Note: Course project of EE102
+    Directory: "C:\Studying\Major\EE102\homework\project"
+
+    [Summer]    Note: Facial recognition this summer
+    Directory: "C:\ML\Research\AIlab\face\"
+
+    [Intern]    Note: The intern project
+    Directory: "C:\company\project1\"
+```
 ### "jumplist.txt"
-The list of the pairs of project name and directory is stored in "jumplist.txt"
+The list of project name, directory and note is stored in "jumplist.txt". Here is an example:
 ```
 # Project name
 # Project directory
@@ -122,7 +140,7 @@ Facial recognition this summer
 Intern
 "C:\company\project1\"
 ```
-The help for "jumplist"
+The help for jumplist:
 ```cmd
 >>jump /jumplist
 Project list are stored in the text file of "jumplist.txt".
