@@ -7,9 +7,8 @@ There are some independent batch programs:
 ### Summary
 It can be used as the default program for C/C++ source code files.
 Then when you double click your C/C++ source code file, it will be compiled (by gcc or g++ correspondingly) and run.
-No need to type on the command line.
+No need to type on the command line. Command-line arguments for the C/C++ programs are still acceptable.
 ### Help
-Command-line arguments for the C/C++ programs are still acceptable. 
 ```cmd
 >>runc /?
 Compiles and runs C/C++ source code files.
