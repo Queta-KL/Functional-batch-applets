@@ -1,7 +1,7 @@
 # Functional-batch-applets
 There are some independent batch programs:
-[runcpp.bat](##runcbat)
-[jump.bat](##jumpbat)
+[runcpp.bat](#runcbat)
+[jump.bat](#jumpbat)
 
 ## runc.bat
 It can be used as the default program for C/C++ programs.
