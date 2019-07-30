@@ -1,5 +1,7 @@
 # Functional-batch-applets
 There are some independent batch programs:
+[runcpp.bat](##runcpp.bat)
+
 ## runcpp.bat
 It can be used as the default program for C/C++ programs.
 Then when you double click your C/C++ program, it will be compiled (by gcc or g++ correspondingly) and run.
