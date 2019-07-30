@@ -4,28 +4,28 @@ There are some independent batch programs:
 + [jump.bat](#jumpbat): Changing to the wanting directory in one command. You can get rid of typing too many cd's.
 
 ## runc.bat
-It can be used as the default program for C/C++ programs.
-Then when you double click your C/C++ program, it will be compiled (by gcc or g++ correspondingly) and run.
+It can be used as the default program for C/C++ source code files.
+Then when you double click your C/C++ source code file, it will be compiled (by gcc or g++ correspondingly) and run.
 No need to type on the command line.
-Command-line arguments for the C/C++ program are still acceptable. 
+Command-line arguments for the C/C++ programs are still acceptable. 
 ```
->>runcpp /?
-Compiles and runs C/C++ program files.
+>>runc /?
+Compiles and runs C/C++ source code files.
 
-Usage:  RUNCPP [file.cpp | file.c | /?] [command-line arguments for the C/C++ program]
+Usage:  RUNC [file.cpp | file.c | /?] [command-line arguments for the C/C++ program]
 
     No args    Display help. This is the same as typing /?.
     -?         Display help. This is the same as not typing any options.
-    xxx.cpp    This C++ program file will be compiled (by g++) and run.
-    xxx.c      This C program file will be compiled (by gcc) and run.
+    xxx.cpp    This C++ source code file will be compiled (by g++) and run.
+    xxx.c      This C source code file will be compiled (by gcc) and run.
 
 Command-line arguments for the C/C++ program are acceptable, by following the file name.
 
-This batch program (runcpp.bat) is recommended as the default program for the C/C++ program files.
+This batch program (runc.bat) is recommended to be set as the default program for C/C++ source code files.
 ```
 Here is an example:
 ```
->> runcpp displayCLA.cpp a b c 1 2 3
+>> runc displayCLA.cpp a b c 1 2 3
 Stdin and stdout:
 ----------------------------------------------------------------
 argv[0]:displayCLA
@@ -50,22 +50,24 @@ int main(int argc, char *argv[]) {
 	// command-line arguments
 	for (unsigned int i=0; i<argc; i++)
 		printf("argv[%u]:%s\n", i, argv[i]);
+	
 	// running time
 	time_t t0=clock();
 	unsigned int runningTime(3000);
 	while (clock()-t0 < runningTime) {}
+	
 	// return value
 	return 12345;
 }
 
 ```
-
-
-
 ## jump.bat
 It can be put in the default directory of the command line.
 It is designed to change the directory quickly to that of your project.
-To be freed from typing many "cd"'s and searching the directory.
+You will be freed from typing many "cd"'s and searching the directory.
+The list recording the directories of each project is stored in "jumplist.txt" under the same directory of "jump.bat"
+
+For example:
 ```bat
 jump EE102
 ```
