@@ -168,4 +168,67 @@ The standard format:
 
 The lines starting with the pound key (#) will be commented out.
 ```
-### /ADD & /DEL command to edit "jumplist"
+### /ADD & /DEL command to edit "jumplist.txt"
+You can use /ADD and /DEL command to edit jumplist.txt in command line. After your update, you can view the whole list by "jump" command. Here is an example:
+``` cmd
+C:\Users\Queta>jump /del intern
+Successfully deletes the project named Intern.
+
+Successfully updated "jumplist.txt".
+
+C:\Users\Queta>jump
+Goes to a project directory quickly.
+
+JUMP [project_name] [/? JUMPLIST|ADD|DEL] [/JUMPLIST] [/ADD name drct note] [/DEL name]
+
+Project list are stored in the text file of "jumplist.txt".
+Project list:
+    [EE102]     Note: Course project of EE102
+    Directory: "C:\Studying\Major\EE102\homework\project"
+
+    [Summer]    Note: Facial recognition this summer
+    Directory: "C:\ML\Research\AIlab\face\"
+
+C:\Users\Queta>jump -add leetcode "C:\coding\OJ\leetcode" OJ
+Successfully adds a new project named leetcode:
+
+    [leetcode]  Note: OJ
+    Directory: "C:\coding\OJ\leetcode"
+
+Successfully updated "jumplist.txt".
+
+C:\Users\Queta>jump
+Goes to a project directory quickly.
+
+JUMP [project_name] [/? JUMPLIST|ADD|DEL] [/JUMPLIST] [/ADD name drct note] [/DEL name]
+
+Project list are stored in the text file of "jumplist.txt".
+Project list:
+    [EE102]     Note: Course project of EE102
+    Directory: "C:\Studying\Major\EE102\homework\project"
+
+    [Summer]    Note: Facial recognition this summer
+    Directory: "C:\ML\Research\AIlab\face\"
+
+    [leetcode]  Note: OJ
+    Directory: "C:\coding\OJ\leetcode"
+ ```
+ The help for the two command /ADD and /DEL:
+ ```cmd
+ C:\Users\Queta>jump /add /?
+Adds a new project directory of "name" "directory" "note" to "jumplist.txt".
+
+Usage:  JUMP /ADD name directory note
+
+Example:
+JUMP /ADD MyFirstProject "C:\myname\somefolder\" Hello,world
+
+C:\Users\Queta>jump /del /?
+Deletes the project "name" and its directory and note from "jumplist.txt".
+
+Usage:  JUMP /DEL name
+
+Example:
+JUMP /DEL MyFirstProject
+ ```
+ 
