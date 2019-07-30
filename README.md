@@ -1,7 +1,7 @@
 # Functional-batch-applets
 There are some independent batch programs:
 + [runcpp.bat](#runcbat): Compiling and running C/C++ in one command or even by double-clicking the file, when the default program set.
-+ [jump.bat](#jumpbat): Changing to the wanting directory in one command. You can get rid of typing too many cd's.
++ [jump.bat](#jumpbat): Changing to the wanted directory in one command. You can get rid of typing too many cd's.
 
 ## runc.bat
 ### Summary
